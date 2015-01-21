@@ -1,6 +1,6 @@
 package web.rufer.amqpclient.producer;
 
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class MessageService {
 
     @Autowired
-    RabbitTemplate rabbitTemplate;
+    AmqpTemplate rabbitTemplate;
 
     public void sendMsgToQueue(String message) {
         rabbitTemplate.convertAndSend(message);

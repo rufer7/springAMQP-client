@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.core.AmqpTemplate;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.times;
@@ -17,7 +17,7 @@ public class MessageServiceTest {
     MessageService messageService;
 
     @Mock
-    RabbitTemplate mockedRabbitTemplate;
+    AmqpTemplate mockedRabbitTemplate;
 
     @Before
     public void init() {
