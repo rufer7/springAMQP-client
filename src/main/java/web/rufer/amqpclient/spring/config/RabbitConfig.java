@@ -6,19 +6,27 @@ import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitConfig {
 
-    protected final String queueName = "test.queue";
+    @Value("qmqp.queue.name")
+    private String queueName;
+
+    @Value("amqp.user")
+    String amqpUser;
+
+    @Value("amqp.password")
+    String amqpPassword;
 
     @Bean
     public ConnectionFactory connectionFactory() {
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
-        connectionFactory.setUsername("test");
-        connectionFactory.setPassword("test");
+        connectionFactory.setUsername(amqpUser);
+        connectionFactory.setPassword(amqpPassword);
         return connectionFactory;
     }
 
