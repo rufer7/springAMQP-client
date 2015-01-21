@@ -8,9 +8,10 @@ Spring boot AMQP client, which communicates with rabbitmq.
 ## Prerequisites
 
 * [Download](http://www.rabbitmq.com/download.html) and install rabbitmq
-* [For WINDOWS] Activate rabbitmq management plugin by executing the following commands under `%PROGRAMFILES%\RabbitMQ Server\rabbitmq_server_3.4.3\sbin`
+* [For WINDOWS] Activate rabbitmq management plugin by executing the following commands in console, which has to be executed as administrator
 
     ```
+    cd %PROGRAMFILES%\RabbitMQ Server\rabbitmq_server_3.4.3\sbin
     rabbitmq-plugins.bat enable rabbitmq_management
     rabbitmq-service.bat stop
     rabbitmq-service.bat install
