@@ -1,4 +1,4 @@
-# springAMQP
+# springAMQP [![Build Status](https://travis-ci.org/rufer7/springAMQP-client.svg?branch=master)](https://travis-ci.org/rufer7/rufer7.github.io)
 
 Spring boot AMQP client, which communicates with rabbitmq.
 
