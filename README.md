@@ -18,5 +18,11 @@ Spring boot AMQP client, which communicates with rabbitmq.
     rabbitmq-service.bat start
     ```
 
-* The rabbitmq-management is now accesible under [http://localhost:15672/](http://localhost:15672/)
+* The rabbitmq-management is now accessible under [http://localhost:15672/](http://localhost:15672/)
+
+
+## Configuration
+
+* Adjust the amqp-properties in the applicaiton.properties file
+
 
