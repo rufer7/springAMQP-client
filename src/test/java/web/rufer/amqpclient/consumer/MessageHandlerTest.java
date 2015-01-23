@@ -1,7 +1,3 @@
-package web.rufer.amqpclient.listener;
-
-import org.springframework.amqp.core.Message;
-
 /*
  * Copyright (C) 2015 Marc Rufer (m.rufer@gmx.ch)
  *
@@ -17,9 +13,12 @@ import org.springframework.amqp.core.Message;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class MessageHandler {
+package web.rufer.amqpclient.consumer;
 
-    public void sendMessageBySms(String message) {
-        System.out.println("message: \"" + message + "\" received");
-    }
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
+
+@RunWith(MockitoJUnitRunner.class)
+public class MessageHandlerTest {
+
 }

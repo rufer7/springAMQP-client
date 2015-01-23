@@ -1,5 +1,3 @@
-package web.rufer.amqpclient.producer;
-
 /*
  * Copyright (C) 2015 Marc Rufer (m.rufer@gmx.ch)
  *
@@ -15,6 +13,11 @@ package web.rufer.amqpclient.producer;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class MessageListenerServiceTest {
+package web.rufer.amqpclient.consumer;
 
+public class MessageHandler {
+
+    public void sendMessageBySms(String message) {
+        System.out.println("message: \"" + message + "\" received");
+    }
 }
