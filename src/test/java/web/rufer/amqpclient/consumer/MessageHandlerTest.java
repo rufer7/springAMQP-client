@@ -15,10 +15,15 @@
  */
 package web.rufer.amqpclient.consumer;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MessageHandlerTest {
 
+    @Test
+    public void dummyTest() {
+        // Test skeleton
+    }
 }
