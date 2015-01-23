@@ -27,22 +27,22 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MessageServiceTest {
+public class MessageProducerServiceTest {
 
-    MessageService messageService;
+    MessageProducerService messageProducerService;
 
     @Mock
     AmqpTemplate mockedRabbitTemplate;
 
     @Before
     public void init() {
-        messageService = new MessageService();
-        messageService.rabbitTemplate = mockedRabbitTemplate;
+        messageProducerService = new MessageProducerService();
+        messageProducerService.rabbitTemplate = mockedRabbitTemplate;
     }
 
     @Test
     public void sendMsgToQueueCallsRabbitTemplate() {
-        messageService.sendMsgToQueue("testmsg");
+        messageProducerService.sendMsgToQueue("testmsg");
         verify(mockedRabbitTemplate, times(1)).convertAndSend(anyString());
     }
 }

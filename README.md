@@ -26,3 +26,6 @@ Spring boot AMQP client, which communicates with rabbitmq.
 * Adjust the amqp-properties in the applicaiton.properties file
 
 
+# Default configuration hints
+
+If you use the default exchange and binding you have to provide the queue name as routing key to send a message to a queue. This has to be defined in the template (`template.setRoutingKey(this.queueName)`)

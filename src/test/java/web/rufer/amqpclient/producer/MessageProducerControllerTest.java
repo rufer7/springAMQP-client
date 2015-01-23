@@ -26,22 +26,22 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MessageControllerTest {
+public class MessageProducerControllerTest {
 
-    MessageController messageController;
+    MessageProducerController messageProducerController;
 
     @Mock
-    MessageService mockedMessageService;
+    MessageProducerService mockedMessageProducerService;
 
     @Before
     public void init() {
-        messageController = new MessageController();
-        messageController.messageService = mockedMessageService;
+        messageProducerController = new MessageProducerController();
+        messageProducerController.messageProducerService = mockedMessageProducerService;
     }
 
     @Test
     public void sendMessageToQueueCallsMessageService() {
-        messageController.sendMessageToQueue("test");
-        verify(mockedMessageService, times(1)).sendMsgToQueue(anyString());
+        messageProducerController.sendMessageToQueue("test");
+        verify(mockedMessageProducerService, times(1)).sendMsgToQueue(anyString());
     }
 }

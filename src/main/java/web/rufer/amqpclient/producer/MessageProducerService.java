@@ -15,21 +15,17 @@
  */
 package web.rufer.amqpclient.producer;
 
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
-@RequestMapping("/messages")
-public class MessageController {
+@Service
+public class MessageProducerService {
 
     @Autowired
-    protected MessageService messageService;
+    AmqpTemplate rabbitTemplate;
 
-    @RequestMapping(value = "/send", method = RequestMethod.POST)
-    public void sendMessageToQueue(@RequestBody String message) {
-        messageService.sendMsgToQueue(message);
+    public void sendMsgToQueue(String message) {
+        rabbitTemplate.convertAndSend(message);
     }
 }

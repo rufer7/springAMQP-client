@@ -16,25 +16,29 @@
 package web.rufer.amqpclient.spring.config;
 
 import org.springframework.amqp.core.AmqpAdmin;
+import org.springframework.amqp.core.MessageListener;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import web.rufer.amqpclient.listener.MessageHandler;
 
 @Configuration
 public class RabbitConfig {
 
-    @Value("qmqp.queue.name")
+    @Value("${amqp.queue.name}")
     private String queueName;
 
-    @Value("amqp.user")
+    @Value("${amqp.user}")
     String amqpUser;
 
-    @Value("amqp.password")
+    @Value("${amqp.password}")
     String amqpPassword;
 
     @Bean
@@ -52,12 +56,30 @@ public class RabbitConfig {
 
     @Bean
     public RabbitTemplate rabbitTemplate() {
-        return new RabbitTemplate(connectionFactory());
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory());
+        //The routing key is set to the name of the queue by the broker for the default exchange.
+        rabbitTemplate.setRoutingKey(this.queueName);
+        return rabbitTemplate;
     }
 
     @Bean
     // Every queue is bound to the default direct exchange
     public Queue myQueue() {
         return new Queue(this.queueName);
+    }
+
+    @Bean
+    public SimpleMessageListenerContainer listenerContainer() {
+        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory());
+        container.setQueueNames(this.queueName);
+        container.setMessageListener(createMessageListenerAdapter());
+        return container;
+    }
+
+    public MessageListener createMessageListenerAdapter() {
+        MessageListenerAdapter messageListenerAdapter = new MessageListenerAdapter(new MessageHandler());
+        messageListenerAdapter.setDefaultListenerMethod("sendMessageBySms");
+        return messageListenerAdapter;
     }
 }
