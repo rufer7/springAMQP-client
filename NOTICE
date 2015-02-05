@@ -2,7 +2,7 @@ rufer7 springAMQP-client
 Copyright 2015 Marc Rufer
 
 This product includes software developed by
-Marc Rufer (https://github.com/rufer7).
+Marc Rufer (https://github.com/rufer7)
 
 The springAMQP-client depends on:
 spring-boot (http://projects.spring.io/spring-boot/) - Apache License 2.0
