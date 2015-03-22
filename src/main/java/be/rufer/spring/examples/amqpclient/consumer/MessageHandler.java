@@ -13,19 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package web.rufer.amqpclient.producer;
+package be.rufer.spring.examples.amqpclient.consumer;
 
-import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+public class MessageHandler {
 
-@Service
-public class MessageProducerService {
-
-    @Autowired
-    AmqpTemplate rabbitTemplate;
-
-    public void sendMsgToQueue(String message) {
-        rabbitTemplate.convertAndSend(message);
+    public void sendMessageBySms(String message) {
+        System.out.println("message: \"" + message + "\" received");
     }
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package web.rufer.amqpclient.producer;
+package be.rufer.spring.examples.amqpclient.producer;
 
 import org.junit.Before;
 import org.junit.Test;

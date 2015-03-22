@@ -13,36 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package web.rufer.amqpclient.producer;
+package be.rufer.spring.examples.amqpclient.consumer;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.amqp.core.AmqpTemplate;
-
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MessageProducerServiceTest {
-
-    MessageProducerService messageProducerService;
-
-    @Mock
-    AmqpTemplate mockedRabbitTemplate;
+public class MessageHandlerTest {
 
     @Before
     public void init() {
-        messageProducerService = new MessageProducerService();
-        messageProducerService.rabbitTemplate = mockedRabbitTemplate;
+        // init block
     }
 
     @Test
-    public void sendMsgToQueueCallsRabbitTemplate() {
-        messageProducerService.sendMsgToQueue("testmsg");
-        verify(mockedRabbitTemplate, times(1)).convertAndSend(anyString());
+    public void dummyTest() {
+        // Test skeleton
     }
 }
