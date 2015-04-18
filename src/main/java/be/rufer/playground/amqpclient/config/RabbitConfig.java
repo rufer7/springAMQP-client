@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.rufer.spring.examples.amqpclient.config;
+package be.rufer.playground.amqpclient.config;
 
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.MessageListener;
@@ -27,7 +27,7 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import be.rufer.spring.examples.amqpclient.consumer.MessageHandler;
+import be.rufer.playground.amqpclient.consumer.MessageHandler;
 
 @Configuration
 public class RabbitConfig {

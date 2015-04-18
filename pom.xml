@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>be.rufer.spring.examples</groupId>
-    <artifactId>ampq-client</artifactId>
+    <groupId>be.rufer.playground</groupId>
+    <artifactId>spring-ampq-example</artifactId>
     <version>0.1-SNAPSHOT</version>
 
     <parent>
@@ -18,7 +18,7 @@
         <!-- use UTF-8 for everything -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <start-class>be.rufer.amqpclient.Application</start-class>
+        <start-class>be.rufer.playground.amqpclient.Application</start-class>
         <mockito.version>1.8.4</mockito.version>
         <java.version>1.8</java.version>
     </properties>

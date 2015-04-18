@@ -13,11 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.rufer.spring.examples.amqpclient.consumer;
+package be.rufer.playground.amqpclient.consumer;
 
-public class MessageHandler {
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
-    public void sendMessageBySms(String message) {
-        System.out.println("message: \"" + message + "\" received");
+@RunWith(MockitoJUnitRunner.class)
+public class MessageHandlerTest {
+
+    @Before
+    public void init() {
+        // init block
+    }
+
+    @Test
+    public void dummyTest() {
+        // Test skeleton
     }
 }
