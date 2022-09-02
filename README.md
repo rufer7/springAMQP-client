@@ -1,3 +1,8 @@
+___
+
+:warning:**This repository has been archived and is no longer maintained**:warning:
+___
+
 # springAMQP 
 [![Build Status](https://travis-ci.org/rufer7/springAMQP-client.svg?branch=master)](https://travis-ci.org/rufer7/springAMQP-client)
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/rufer7/springAMQP-client/blob/master/LICENSE)
